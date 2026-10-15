@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "description": "BridgeSecur transaction insight (UI-first MVP, DEMO data only).",
+  "proposedName": "BridgeSecur",
+  "source": {
+    "shasum": "ZkFs+iA72c12IzNpe8hB3kym+2+i35fwEv3TGe2EkKE=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "bridgesecur-snap",
+        "registry": "https://registry.npmjs.org/",
+        "iconPath": "images/icon.svg"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:transaction-insight": {}
+  },
+  "platformVersion": "12.1.0",
+  "manifestVersion": "0.1"
+}

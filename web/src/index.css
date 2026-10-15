@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", "IBM Plex Sans Thai", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", "IBM Plex Sans Thai", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-stencil: "Saira Stencil One", "Poppins", sans-serif;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-fg: #ffffff;
+  --color-brand: #e84142;
+
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-ink: var(--primary-ink);
+  --color-ok: var(--ok);
+  --color-critical-ink: var(--critical-ink);
+  --color-warning-ink: var(--warning-ink);
+  --color-critical: var(--critical);
+  --color-critical-soft: var(--critical-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-norisk: var(--norisk);
+  --color-norisk-soft: var(--norisk-soft);
+  --color-unknown: var(--unknown);
+  --color-unknown-soft: var(--unknown-soft);
+
+  --animate-shimmer: shimmer 1.4s linear infinite;
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
+  }
+}
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --muted: #f1f4f8;
+  --fg: #0f1729;
+  --fg-muted: #556378; /* spec #64748B darkened for AA on #F1F4F8 */
+  --border: #e2e8f0;
+  --primary: #3b6fd8;
+  --primary-hover: #285bc5;
+  --primary-ink: #2a5cc4; /* link/text blue, AA on light surfaces */
+  /* Fills/borders use the spec hues; small text uses the darker *-ink for WCAG AA. */
+  --critical: #d93b3b;
+  --critical-ink: #b42828;
+  --critical-soft: #fce8e8;
+  --warning: #d98a1b;
+  --warning-ink: #8f5306;
+  --warning-soft: #fff3df;
+  --norisk: #157a44;
+  --norisk-soft: #eaf7ef;
+  --unknown: #64748b;
+  --unknown-soft: #f1f5f9;
+  --ok: #16a34a;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0b1020;
+  --surface: #121a2d;
+  --muted: #1a2339;
+  --fg: #eef1f7;
+  --fg-muted: #9aa6bd;
+  --border: #253049;
+  --primary: #5b8af0;
+  --primary-hover: #7aa0f4;
+  --primary-ink: #8fb0f6;
+  --critical: #f06363;
+  --critical-ink: #ff8a8a;
+  --critical-soft: #3a1518;
+  --warning: #f2b34c;
+  --warning-ink: #f6c46f;
+  --warning-soft: #36260d;
+  --norisk: #6fd69b;
+  --norisk-soft: #10291c;
+  --unknown: #a7adba;
+  --unknown-soft: #1e2330;
+  --ok: #4ade80;
+  color-scheme: dark;
+}
+
+html, body, #root { min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+:lang(th) body { font-family: "IBM Plex Sans Thai", "Inter", ui-sans-serif, sans-serif; }
+
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }

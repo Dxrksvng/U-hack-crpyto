@@ -1,0 +1,579 @@
+{
+  "brand": {
+    "eyebrow": "Free-for-all secure payments for Web 3",
+    "tagline": "We will build Web3 safe again!"
+  },
+  "header": {
+    "menu": "Open menu",
+    "connect": "Connect",
+    "connecting": "Connecting…",
+    "connected": "Connected",
+    "account": "Open wallet account"
+  },
+  "wallet": {
+    "connected": "Wallet connected",
+    "disconnected": "Wallet disconnected",
+    "accountChanged": "Account changed to {{addr}}. Previous checks still apply to the destination only.",
+    "chainChanged": "Wallet network changed to {{chain}}",
+    "unsupported": "Your wallet is on an unsupported network",
+    "switchFailed": "Network switch was rejected or failed",
+    "wrongNetwork": "Your wallet is on a different network than {{chain}}",
+    "switch": "Switch to {{chain}}"
+  },
+  "hero": {
+    "cta": "Check before you send",
+    "ctaSub": "ตรวจสอบก่อนโอน",
+    "chips": {
+      "warn": "Warn, never block",
+      "nodata": "No transaction data stored",
+      "evidence": "Every reason has evidence"
+    },
+    "howTitle": "How it works",
+    "steps": {
+      "connect": {
+        "title": "Connect wallet",
+        "body": "Use your own wallet. We never hold funds or ask for keys."
+      },
+      "check": {
+        "title": "Check destination",
+        "body": "Only the chain and destination address are sent for checking."
+      },
+      "decide": {
+        "title": "You decide",
+        "body": "We warn with evidence. You always make the final call."
+      }
+    },
+    "chipsSub": {
+      "warn": "เตือน ไม่บล็อก",
+      "nodata": "ไม่เก็บข้อมูลธุรกรรม",
+      "evidence": "ทุกเหตุผลมีหลักฐาน"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "close": "Close menu",
+    "products": "Products",
+    "company": "Company",
+    "app": "App",
+    "consult": "BridgeConsult",
+    "api": "API",
+    "learn": "Fraud Learning Center",
+    "about": "About Us",
+    "partners": "Partnerships",
+    "legal": "Legal & Privacy",
+    "contact": "Contact Us",
+    "send": "Send & check",
+    "history": "History",
+    "settings": "Settings",
+    "language": "Language"
+  },
+  "chain": {
+    "label": "Network",
+    "liveSend": "Live send (testnet)",
+    "checkOnly": "Check only (mainnet)",
+    "checkOnlyTip": "Mainnet is check-only in this release: we analyse the destination, but sending real funds from this app is disabled until the product has been audited."
+  },
+  "send": {
+    "title": "Send",
+    "subtitle": "Check the destination before you send",
+    "from": "From",
+    "notConnected": "Wallet not connected",
+    "balance": "Available",
+    "to": "To",
+    "toPlaceholder": "Paste destination address 0x…",
+    "paste": "Paste",
+    "clear": "Clear",
+    "amount": "Amount",
+    "max": "Max",
+    "fee": "Estimated network fee",
+    "feeUnavailable": "Shown after connecting a wallet",
+    "checkRisk": "Check address risk",
+    "checkRiskSub": "ตรวจสอบความเสี่ยง",
+    "checkOnly": "Check only",
+    "invalid": "Not a valid address (0x + 40 hex characters)",
+    "badChecksum": "Checksum mismatch. One or more letters may be wrong.",
+    "validFormat": "Valid address format",
+    "amountInvalid": "Enter an amount greater than 0",
+    "amountPrecision": "Too many decimal places (max 18)",
+    "insufficient": "Amount exceeds your available balance",
+    "gasUnaffordable": "Not enough left to pay the network fee",
+    "privacy": "Only the chain and destination are sent for checking, never your address or amount.",
+    "showAnalysis": "Open analysis",
+    "demoHint": "Demo: end an address with dead, beef or 0000 to see each verdict.",
+    "connectToSend": "Connect a wallet to send. You can still check an address.",
+    "mainnetNote": "Mainnet is check-only in this release.",
+    "errors": {
+      "timeout": "Could not run the risk check against live sources (timed out). Nothing was substituted from demo data.",
+      "network": "Could not run the risk check against live sources (service unreachable). Nothing was substituted from demo data.",
+      "server": "Could not run the risk check against live sources (service error). Nothing was substituted from demo data.",
+      "invalid_response": "The risk service returned data we could not verify, so no verdict is shown."
+    },
+    "retry": "Retry",
+    "sendTx": "Send transaction"
+  },
+  "poison": {
+    "title": "Looks like a recent recipient",
+    "body": "The first and last characters match a previous recipient but the middle is different. This is a common address-poisoning trick.",
+    "recent": "Recent recipient (demo)",
+    "pasted": "You pasted"
+  },
+  "checking": {
+    "title": "Checking destination",
+    "subtitle": "This usually takes a few seconds",
+    "cancel": "Cancel check",
+    "generic": "Live per-step progress is not available. Steps update when the result arrives.",
+    "steps": {
+      "format": "Validate address format",
+      "intel": "Query threat intelligence",
+      "onchain": "Analyze on-chain signals",
+      "community": "Evaluate community reports",
+      "policy": "Apply risk policy"
+    },
+    "status": {
+      "pending": "Pending",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed",
+      "timeout": "Timed out",
+      "not_checked": "Not checked",
+      "hit": "Signal found"
+    }
+  },
+  "alert": {
+    "criticalTitle": "CRITICAL SECURITY ALERT",
+    "warningTitle": "RISK WARNING",
+    "showMore": "Show more reasons",
+    "cancel": "Cancel transaction",
+    "cancelSub": "ยกเลิกการทำรายการ",
+    "continue": "Continue anyway",
+    "continueRisk": "Continue anyway (risky)",
+    "understand": "I understand the risk and want to continue",
+    "beforeWallet": "Shown before your wallet opens. You decide."
+  },
+  "preview": {
+    "title": "Review transfer",
+    "from": "From",
+    "to": "To",
+    "network": "Network",
+    "amount": "Amount",
+    "fee": "Estimated network fee",
+    "total": "Estimated total",
+    "verdict": "Destination check",
+    "evidence": "View evidence",
+    "cancel": "Cancel",
+    "continue": "Confirm in wallet",
+    "feeNote": "Fee is an estimate from the network and can change.",
+    "unknownNote": "The check was inconclusive. Consider a small test transfer first.",
+    "noRiskNote": "This check does not guarantee safety. Make sure this is who you intend to pay.",
+    "notReady": "Nothing to review yet",
+    "notReadyBody": "Enter a destination and amount, then run a check.",
+    "goSend": "Go to Send",
+    "stale": "The check is older than 10 minutes. Re-checking before you continue.",
+    "connect": "Connect wallet"
+  },
+  "tx": {
+    "title": "Transfer status",
+    "preparing": "Preparing transaction…",
+    "awaiting_approval": "Waiting for approval in your wallet…",
+    "rejected": "Transaction rejected. You declined the request in your wallet, so nothing was sent.",
+    "confirmed": "Confirmed on-chain",
+    "failed": "Transaction failed",
+    "replaced": "The transaction was replaced in your wallet",
+    "view": "View on explorer",
+    "cancelled": "Transfer cancelled. Nothing was sent.",
+    "newTransfer": "New transfer",
+    "hash": "Tx hash",
+    "broadcasting": "Broadcasting to the network…",
+    "pending_confirmation": "Waiting for on-chain confirmation…",
+    "confirmation_unknown": "Confirmation unknown",
+    "unknownAdvice": "The transaction was broadcast but we could not confirm it. Check the explorer before trying again: sending again could pay twice.",
+    "technical": "Technical details",
+    "retry": "Try again",
+    "approvalTitle": "Confirm the transaction in your wallet",
+    "approvalSub": "Check the destination address, amount and fee before approving.",
+    "openAnalysis": "Open analysis"
+  },
+  "verdict": {
+    "CRITICAL": {
+      "label": "Critical",
+      "title": "High risk detected"
+    },
+    "WARNING": {
+      "label": "Warning",
+      "title": "Risk signals found"
+    },
+    "NO_KNOWN_RISK": {
+      "label": "No known risk",
+      "title": "No known risk detected"
+    },
+    "UNKNOWN": {
+      "label": "Inconclusive",
+      "title": "Not enough data"
+    },
+    "notRecommend": "I don't recommend proceeding with this transaction. Here's why:",
+    "notSafe": "This does not mean it is safe. Make sure this is who you intend to pay."
+  },
+  "analysis": {
+    "title": "Analysis",
+    "intro": "I've analyzed the transaction. Here's what I found.",
+    "details": "Risk details",
+    "detailsTitle": "Risk Analysis",
+    "factors": "Risk factors",
+    "notFound": "This check is not in this session.",
+    "notFoundBody": "Checks live only in memory and are cleared when you refresh."
+  },
+  "consult": {
+    "title": "BridgeConsult",
+    "subtitle": "Your Web3 security assistant",
+    "name": "BridgeSecur",
+    "mode": "Templated answers (no AI model connected). Every answer uses only this session's check data or general guidance.",
+    "contextNone": "No destination checked yet. I can still explain general safety topics.",
+    "contextFor": "Answering about",
+    "found": "What I found",
+    "noFindings": "No hits on any source we checked.",
+    "score": "Risk signal score",
+    "scoreNote": "Risk signal score, not a safety guarantee",
+    "scoreNoData": "Not enough data",
+    "considered": "Verdict",
+    "proceedNote": "Only proceed if you fully understand the risk and trust this address.",
+    "checksRun": "Checks run",
+    "recommendation": "My recommendation",
+    "why": "Why this verdict?",
+    "whyTitle": "How the verdict is decided",
+    "whyBody1": "Only known threat lists (T1: sanctions and scam databases) can produce Critical.",
+    "whyBody2": "Graph, behaviour and contract signals can raise a Warning. Community reports alone are capped at Warning to prevent report spam.",
+    "whyBody3": "The AI only explains the evidence. It never decides the verdict, and it never says an address is safe.",
+    "reporters": "Reported by {{count}} wallets",
+    "ask": "Ask me anything about this transaction…",
+    "sendMsg": "Send message",
+    "thinking": "Thinking…",
+    "kinds": {
+      "fact": "From this check",
+      "education": "General guidance",
+      "unknown": "Cannot verify"
+    },
+    "quick": {
+      "why": "Why is this risky?",
+      "explain": "Explain the evidence in detail",
+      "continue": "What happens if I continue?",
+      "verify": "How do I verify the recipient?",
+      "poisoning": "What is address poisoning?",
+      "report": "Report this address",
+      "whyNone": "Why was no risk found?",
+      "sources": "Which sources were checked?",
+      "limits": "What are the limits of this result?",
+      "checkMore": "What else should I verify?",
+      "wrongSend": "What if I send to the wrong address?"
+    },
+    "noEvidence": "I can't verify that from this check's evidence, so I won't guess.",
+    "noCheck": "There is no check in this session yet, so I have no evidence about any address. Run a check on the Send screen first.",
+    "a_why_none": "I didn't find risk signals in the sources I checked. That is not a guarantee: new scam addresses appear every day.",
+    "a_why": "These are the signals behind the verdict:",
+    "a_explain_none": "No source returned a finding for this address.",
+    "a_continue": "If you continue, your wallet will ask you to confirm. Blockchain transfers cannot be reversed, and BridgeSecur cannot recover funds. The decision is yours.",
+    "a_verify": "Confirm the full address with the recipient through a different channel (call, in person). Compare every character, not just the start and end. Consider sending a small test amount first.",
+    "a_poisoning": "Address poisoning: a scammer sends you a tiny transfer from an address that starts and ends like one you use, hoping you copy it from your history later. Always compare the full address.",
+    "a_tiers": "Sources not checked this time: {{tiers}}. Treat the result as incomplete.",
+    "scoreNone": "No risk score available",
+    "nkrIntro": "I looked at the latest result. No known risk signals were found in the sources that were checked successfully. I still cannot guarantee the destination is safe.",
+    "a_whyNone": "No risk was found because these sources returned no match for this address:",
+    "a_whyNone_zero": "No source returned a confirmed 'no match' in this check, so I cannot explain why no risk was found.",
+    "a_sources": "Sources in this check:",
+    "a_sources_demo": "These results are DEMO fixtures, not live intelligence.",
+    "a_limits": "Limits: 'no known risk' only means the sources that ran did not flag this address. New or unlisted scams are not covered, a source that was not checked or unavailable says nothing, and the result can change over time.",
+    "a_checkMore": "Before confirming: confirm the full address with the recipient through a separate channel, compare the first and last characters, check the network matches what they expect, and consider a small test transfer first.",
+    "a_wrongSend": "Blockchain transfers cannot be reversed. If you send to the wrong address, neither BridgeSecur nor the network can recover it; only the recipient could return it voluntarily."
+  },
+  "tiers": {
+    "T0": "Client",
+    "T1": "Threat intel",
+    "T2": "Graph",
+    "T3": "Behaviour/ML",
+    "T4": "Contract",
+    "status": {
+      "ok": "No hit",
+      "hit": "Hit",
+      "not_checked": "Not checked",
+      "timeout": "Timeout"
+    }
+  },
+  "history": {
+    "title": "Transaction History",
+    "tabs": {
+      "all": "All",
+      "checked": "Checked",
+      "sent": "Sent"
+    },
+    "empty": "Nothing here yet",
+    "emptyBody": "Checks and transfers from this session appear here.",
+    "sessionNote": "Session only: history lives in memory and is cleared when you refresh. Nothing is stored on this device or our servers.",
+    "check": "Destination check",
+    "transfer": "Transfer",
+    "notTransfer": "Check only. No funds were sent.",
+    "details": "Details",
+    "openAnalysis": "Open analysis"
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "preferences": "Preferences",
+    "support": "Support",
+    "about": "About",
+    "language": "Language",
+    "appearance": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "disconnect": "Disconnect",
+    "notConnected": "No wallet connected",
+    "connect": "Connect wallet",
+    "network": "Network",
+    "help": "Help Center",
+    "report": "Report an address",
+    "reportNeedCheck": "Check an address first, then report it from the analysis.",
+    "contact": "Contact Us",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "version": "App version",
+    "notifications": "Notifications are not available in this release."
+  },
+  "info": {
+    "learn": {
+      "title": "Fraud Learning Center",
+      "body": "Common scams: address poisoning (look-alike addresses in your history), fake airdrops that ask you to sign approvals, impersonated support agents, and phishing sites that copy wallet pages. Rule of thumb: never share your seed phrase, compare the full address, and test with a small amount."
+    },
+    "about": {
+      "title": "About Us",
+      "body": "BridgeSecur checks a destination wallet before you send and explains the risk with evidence. We warn, never block, and never hold funds."
+    },
+    "partnerships": {
+      "title": "Partnerships",
+      "body": "Wallets, exchanges and threat-intelligence providers can integrate the check API. This page is a placeholder for the hackathon demo."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "We send only the chain id and the destination address to the check service. We never send your address or the amount. Checks and transfers live in your browser memory for this session only. Theme and language are stored on your device."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "body": "BridgeSecur provides risk signals, not guarantees. You decide and send from your own wallet. Demo fixtures are not live threat intelligence."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "body": "For the hackathon demo, reach the team through the event channel. A public contact address will be added before launch."
+    },
+    "api": {
+      "title": "API",
+      "body": "POST /v1/check with { chain_id, destination } returns a verdict, evidence and tier statuses. Documentation will be published with the backend."
+    },
+    "help": {
+      "title": "Help Center",
+      "body": "Paste a destination on the Send screen. Read the verdict and the evidence. If a warning appears, verify the recipient through another channel before you continue."
+    }
+  },
+  "report": {
+    "title": "Report this address",
+    "reason": "Reason",
+    "note": "Note (optional)",
+    "notePlaceholder": "What happened? Do not include personal data.",
+    "reasons": {
+      "phishing": "Phishing",
+      "fake_airdrop": "Fake airdrop",
+      "poisoning": "Address poisoning",
+      "impersonation": "Impersonation",
+      "other": "Other"
+    },
+    "explain": "In the live version your report is signed by your wallet and recorded on-chain with no personal data. This demo does not submit anything.",
+    "submit": "Submit report (demo)",
+    "submitting": "Submitting…",
+    "done": "Demo only: report not sent anywhere.",
+    "cancel": "Cancel"
+  },
+  "common": {
+    "copy": "Copy",
+    "copied": "Copied",
+    "close": "Close",
+    "back": "Back",
+    "demo": "DEMO",
+    "demoTip": "Demo fixture, not live threat intelligence",
+    "retry": "Retry",
+    "theme": "Toggle theme",
+    "home": "Home",
+    "live": "LIVE"
+  },
+  "footer": {
+    "privacy": "Only the chain and destination are sent for checking, never your address or amount.",
+    "learn": "Fraud Learning Center"
+  },
+  "meta": {
+    "policy": "policy",
+    "rules": "rules",
+    "model": "model",
+    "checked": "checked"
+  },
+  "nav": {
+    "send": "Send",
+    "history": "History",
+    "consult": "BridgeConsult",
+    "settings": "Settings",
+    "label": "Main"
+  },
+  "connect": {
+    "title": "Connect your wallet",
+    "subtitle": "Choose a wallet to continue",
+    "metamask": "Connect with MetaMask",
+    "walletconnect": "Scan with QR code",
+    "trust": "Connect with Trust Wallet",
+    "core": "Connect with Core Wallet",
+    "more": "View more wallets",
+    "detected": "Detected",
+    "rejected": "Connection request was rejected in the wallet",
+    "failed": "Could not connect to the wallet",
+    "noKeys": "BridgeSecur never asks for your seed phrase or private key."
+  },
+  "send2": {
+    "network": "Network",
+    "note": "Note (optional)",
+    "notePlaceholder": "e.g. service fee, tuition",
+    "noteHint": "Kept on this screen only. Never sent anywhere.",
+    "cta": "Check address risk",
+    "ctaSub": "ตรวจสอบความเสี่ยง",
+    "fromLine": "From"
+  },
+  "checking2": {
+    "title": "Checking address…",
+    "subtitle": "กำลังตรวจสอบปลายทาง",
+    "wait": "This may take a few seconds",
+    "waitSub": "ใช้เวลาประมาณ 5-10 วินาที",
+    "close": "Close"
+  },
+  "alert2": {
+    "close": "Close alert"
+  },
+  "preview2": {
+    "title": "Transaction Preview",
+    "myWallet": "My wallet",
+    "riskBanner": "This is a high-risk address",
+    "riskBannerSub": "Please review the risk analysis before continuing.",
+    "warnBanner": "Risk signals found for this address",
+    "unknownBanner": "The check was inconclusive"
+  },
+  "details2": {
+    "title": "Risk Analysis"
+  },
+  "sev": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "info": "Info"
+  },
+  "settings2": {
+    "notificationsValue": "Not available",
+    "languageValue": "English",
+    "appearanceLight": "Light",
+    "appearanceDark": "Dark",
+    "notifications": "Notifications"
+  },
+  "txStep": {
+    "preparing": "Prepare: check account, network, balance and gas",
+    "awaiting_approval": "Approve in your wallet",
+    "broadcasting": "Broadcast to the network",
+    "pending_confirmation": "Wait for on-chain confirmation",
+    "confirmed": "Confirmed"
+  },
+  "txState": {
+    "done": "completed",
+    "active": "in progress",
+    "failed": "failed",
+    "unknown": "unknown",
+    "todo": "not started"
+  },
+  "txErr": {
+    "not_connected": "Wallet is not connected.",
+    "account_changed": "The wallet account changed. Review the transfer again.",
+    "wrong_network": "Your wallet is on a different network than this transfer.",
+    "invalid_input": "Destination or amount is invalid.",
+    "insufficient_funds": "Not enough balance to cover the amount plus network fee.",
+    "rejected": "Transaction rejected.",
+    "rpc_unsupported": "The wallet or network returned an unsupported JSON-RPC response (code -32006). Nothing was confirmed as sent.",
+    "timeout": "The network did not respond in time. Nothing was sent.",
+    "reverted": "The transaction was mined but reverted. The amount was not transferred; the network fee was spent.",
+    "unknown": "The transaction could not be completed."
+  },
+  "sendBlock": {
+    "check_only_chain": "Sending is disabled on mainnet in this release (check-only).",
+    "not_connected": "Connect a wallet to send. You can still check addresses without one.",
+    "wrong_network": "Your wallet is not on {{chain}}.",
+    "no_destination": "Enter a valid destination address.",
+    "needs_check": "Check the destination first.",
+    "balance_unknown": "Waiting for your wallet balance…",
+    "fee_unknown": "Network fee not available yet.",
+    "amountInvalid": "Enter an amount to send.",
+    "amountPrecision": "Too many decimal places.",
+    "insufficient": "Amount is more than your balance.",
+    "gasUnaffordable": "Not enough balance for amount + network fee."
+  },
+  "walletCfg": {
+    "notConfigured": "Wallet not configured",
+    "setup": "WalletConnect and the wallet list need VITE_REOWN_PROJECT_ID in web/.env (free at cloud.reown.com). Browser-extension wallets that are installed still connect directly. Address checks work without a wallet.",
+    "rowNeedsSetup": "Not installed. Needs WalletConnect setup",
+    "rowUnavailable": "This wallet needs WalletConnect, which is not configured.",
+    "banner": "WalletConnect not configured: only installed browser wallets can connect.",
+    "demoBanner": "Risk checks use DEMO fixtures, not live threat intelligence."
+  },
+  "nkr": {
+    "cardDesc": "No alerts from the checks that completed.",
+    "support": "No risk signals were found in the sources checked. This does not guarantee the destination is safe.",
+    "popupBody": "Based on the checks that completed, no known risk signals were found for this destination. Still, double-check the recipient and the transaction details.",
+    "review": "Review transaction",
+    "details": "View check details",
+    "cancel": "Cancel",
+    "sourcesTitle": "What was checked",
+    "recoTitle": "Recommendation",
+    "askConsult": "Ask BridgeConsult",
+    "back": "Back to edit",
+    "simulated": "DEMO: simulated check, not live intelligence",
+    "liveUnavailable": "Could not run the risk check against live sources.",
+    "reviewNote": "This check does not guarantee safety",
+    "blocked": "Cannot review yet",
+    "status": {
+      "MATCH": "Match found",
+      "NO_MATCH": "No match found",
+      "UNAVAILABLE": "Unavailable",
+      "NOT_CHECKED": "Not checked",
+      "NOT_APPLICABLE": "Not applicable"
+    },
+    "checkedAt": "Checked"
+  },
+  "success": {
+    "title": "Transfer successful",
+    "sub": "Confirmed on-chain",
+    "hash": "Transaction hash",
+    "to": "Recipient",
+    "from": "Sender",
+    "network": "Network",
+    "amount": "Amount",
+    "fee": "Network fee (actual)",
+    "time": "Block time",
+    "status": "Status",
+    "confirmed": "Confirmed",
+    "explorer": "View on explorer",
+    "home": "Back to home",
+    "history": "View history",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "snap": {
+    "title": "BridgeSecur Transaction Insight",
+    "explain": "Connecting your wallet and installing the BridgeSecur Snap are separate actions. The Snap shows risk warnings inside MetaMask's own Send screen. It currently uses DEMO data only, not live threat intelligence.",
+    "install": "Install BridgeSecur Snap",
+    "installing": "Waiting for MetaMask…",
+    "status": {
+      "checking": "Checking Snap status…",
+      "no_provider": "MetaMask not detected. Install the MetaMask extension to use the Snap.",
+      "not_installed": "Not installed.",
+      "installed": "Installed. Open MetaMask's Send screen to see the insight.",
+      "error": "Could not read Snap status. You can try again."
+    }
+  }
+}

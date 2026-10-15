@@ -1,0 +1,33 @@
+data/
+
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+coverage/
+.next/
+.vite/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+
+# Python
+__pycache__/
+.venv/
+venv/
+*.pyc
+
+# Logs
+*.log
+npm-debug.log*
