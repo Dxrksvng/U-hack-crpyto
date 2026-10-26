@@ -307,6 +307,29 @@ Web DEMO endings: addresses ending `dead` give CRITICAL, `beef` WARNING, `0000` 
 
 Designed with Thai PDPA in mind: minimal data sent (chain id and destination only), no persistence of addresses, no account or key collection. Any future backend must add a retention policy, audit log, and legal review before handling real risk data.
 
+## Education & achievements
+
+**Learn. Build. Go further.**
+
+Builder: Nattakamon Jaimetha. Source: [portfolio](https://nattakamon-portfolio.vercel.app/).
+
+**Education**
+
+- King Mongkut's Institute of Technology Ladkrabang (KMITL), B.Sc. Data Science & Business Analytics, Data Engineering track (started 2022).
+- Coursework: big data systems, data pipelines, applied machine learning, cloud infrastructure, SQL databases, IT project management.
+- Senior project: Document Intelligence, an OCR project (academic, 2025).
+
+**Achievements**
+
+| Year | Event | Result |
+|---|---|---|
+| 2026 | SKY Innovation Spark 2026 (SKY ICT hackathon) | One TrustX, an airport decision-support MVP. Selected among 15 teams; advanced to the round of 5 finalists. Final awards not yet decided. |
+| 2026 | Super AI Engineer Season 6 (AIEAT Thailand) | FahMai, a Thai-language retrieval project. Benchmark: 95/100 questions across a 118-document knowledge base. |
+| 2025 | Super AI Engineer Season 5 (AIEAT Thailand) | Honorable Mention, Healthcare AI project (เฒ่าทัน). |
+| 2019 | National Arts & Crafts Competition | Gold Medal, motion infographic "Preserving Thai Seas". |
+
+BridgeSecur was built for U-Hackathon 2026. No U-Hackathon result is listed here because none has been announced in the source above.
+
 ## Documentation
 
 Session-by-session decisions and verification notes live in [`docs/progress/`](docs/progress/).
