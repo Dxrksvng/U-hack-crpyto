@@ -19,3 +19,24 @@
 **What's next**
 - Install Snap in MetaMask Flask via `npm run serve`, walk the manual guide in `packages/bridgesecur-snap/README.md`, capture screenshots.
 - Fix the two failing web tests (NKR work).
+
+## Update: native Send verified in MetaMask Flask (v0.1.3)
+
+**Verified (manual, MetaMask Flask, Sepolia test network, no transaction confirmed)**
+- Snap installed from `local:http://localhost:8080`, version 0.1.3, enabled, permission `endowment:transaction-insight` approved.
+- `wallet_getSnaps` returned the Snap after install. Connected sites: localhost:5174.
+- Native Send confirmation for recipient `0xdead000000000000000000000000000000000001` shows the BridgeSecur insight: **CRITICAL, score 92/100**, two evidence rows, recommended action in EN and TH, `[DEMO]` labels.
+- The transaction was cancelled; nothing was broadcast.
+
+**Not yet verified**
+- WARNING, NO_KNOWN_RISK and UNKNOWN screens in native Send (only the unit tests cover them).
+- Behaviour after the Snap is removed and reinstalled.
+
+**Root causes found along the way**
+1. MetaMask Stable 13.52.0 refuses local Snaps (`Fetching local snaps is disabled`). Use Flask.
+2. Non-CRITICAL responses contained `severity: undefined`. MetaMask rejects non-JSON values and crashes the Snap (`Received non-JSON-serializable value`). Fixed in 0.1.3: `severity` is omitted unless CRITICAL. Unit tests now check every response against MetaMask's `JsonStruct`.
+3. Installing from the website card failed silently because the card hides the error. The real MetaMask error only appeared through the console. The `wallet_requestSnaps` call was pending until the Add-to-MetaMask approval was completed.
+
+**Unrelated console noise:** `Cannot update transaction as ID not found` came from MetaMask's own transaction state, not from the Snap.
+
+**Still open:** the two failing website tests (VerdictCard "DEMO" duplicate, demo fixture "safe" wording) belong to the paused NKR work and have not been changed.
