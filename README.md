@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/u-hackathon-banner.png" alt="U-Hackathon 2026, organised by u-topia" width="100%">
+</p>
+
 # BridgeSecur
 
 **Check before you send.** BridgeSecur is a warn-only Web3 transfer safety checker. Before a user sends crypto, it checks the destination address, shows a plain-language verdict with evidence, and lets the user decide. It also ships as a MetaMask Snap that shows the same verdict inside MetaMask's native Send confirmation.
@@ -328,6 +332,117 @@ Builder: Nattakamon Jaimetha. Source: [portfolio](https://nattakamon-portfolio.v
 | 2026 | Super AI Engineer Season 6 (AIEAT Thailand) | FahMai, a Thai-language retrieval project. Benchmark: 95/100 questions across a 118-document knowledge base. |
 | 2025 | Super AI Engineer Season 5 (AIEAT Thailand) | Honorable Mention, Healthcare AI project (เฒ่าทัน). |
 | 2019 | National Arts & Crafts Competition | Gold Medal, motion infographic "Preserving Thai Seas". |
+
+## Skills & capabilities
+
+Technologies used across my projects. The stack used in this repository is in [Tech stack](#tech-stack). Source: [portfolio](https://nattakamon-portfolio.vercel.app/). Governance frameworks listed are project research, not professional certifications.
+
+**Generative AI & Agents**
+
+<p>
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain">
+<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langgraph&logoColor=white" alt="LangGraph">
+<img src="https://img.shields.io/badge/RAG-444?style=for-the-badge" alt="RAG">
+<img src="https://img.shields.io/badge/LLMs-444?style=for-the-badge" alt="LLMs">
+<img src="https://img.shields.io/badge/Agentic%20AI-444?style=for-the-badge" alt="Agentic AI">
+<img src="https://img.shields.io/badge/NLP-444?style=for-the-badge" alt="NLP">
+<img src="https://img.shields.io/badge/Prompt%20Engineering-444?style=for-the-badge" alt="Prompt Engineering">
+<img src="https://img.shields.io/badge/Typhoon%20LLM-444?style=for-the-badge" alt="Typhoon LLM">
+<img src="https://img.shields.io/badge/Anti--Hallucination%20Design-444?style=for-the-badge" alt="Anti-Hallucination Design">
+</p>
+
+**Machine Learning & Vision**
+
+<p>
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch">
+<img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn">
+<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+<img src="https://img.shields.io/badge/YOLO-00FFFF?style=for-the-badge" alt="YOLO">
+<img src="https://img.shields.io/badge/ResNet-444?style=for-the-badge" alt="ResNet">
+<img src="https://img.shields.io/badge/OCR-444?style=for-the-badge" alt="OCR">
+<img src="https://img.shields.io/badge/Whisper%20STT-444?style=for-the-badge" alt="Whisper STT">
+</p>
+
+**Backend & APIs**
+
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+<img src="https://img.shields.io/badge/Django%20%2F%20DRF-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django / DRF">
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic">
+<img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/REST%20%2F%20NDJSON%20streaming-444?style=for-the-badge" alt="REST / NDJSON streaming">
+</p>
+
+**Frontend & Interfaces**
+
+<p>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white" alt="React">
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js">
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
+<img src="https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white" alt="shadcn/ui">
+<img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+<img src="https://img.shields.io/badge/Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Motion">
+<img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white" alt="Three.js">
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+</p>
+
+**Data & Analytics**
+
+<p>
+<img src="https://img.shields.io/badge/SQL-444?style=for-the-badge" alt="SQL">
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+<img src="https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white" alt="SciPy">
+<img src="https://img.shields.io/badge/NetworkX-444?style=for-the-badge" alt="NetworkX">
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
+<img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge" alt="Tableau">
+<img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge" alt="Power BI">
+<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge" alt="Excel">
+<img src="https://img.shields.io/badge/ETL%20%2F%20data%20pipelines-444?style=for-the-badge" alt="ETL / data pipelines">
+</p>
+
+**Cloud & DevOps**
+
+<p>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx">
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions">
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+<img src="https://img.shields.io/badge/GCP%20Cloud%20Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="GCP Cloud Run">
+<img src="https://img.shields.io/badge/AWS%20SES-FF9900?style=for-the-badge" alt="AWS SES">
+<img src="https://img.shields.io/badge/OpenTelemetry-425CC7?style=for-the-badge&logo=opentelemetry&logoColor=white" alt="OpenTelemetry">
+<img src="https://img.shields.io/badge/Kubernetes%20%28concepts%29-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes (concepts)">
+</p>
+
+**Testing & Evaluation**
+
+<p>
+<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest">
+<img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge" alt="Playwright">
+<img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest">
+<img src="https://img.shields.io/badge/Hallucination%20evaluation-444?style=for-the-badge" alt="Hallucination evaluation">
+<img src="https://img.shields.io/badge/Human--in--the--loop-444?style=for-the-badge" alt="Human-in-the-loop">
+</p>
+
+**AI Governance & Safety**
+
+<p>
+<img src="https://img.shields.io/badge/Thai%20PDPA-444?style=for-the-badge" alt="Thai PDPA">
+<img src="https://img.shields.io/badge/EU%20AI%20Act-444?style=for-the-badge" alt="EU AI Act">
+<img src="https://img.shields.io/badge/NIST%20AI%20RMF-444?style=for-the-badge" alt="NIST AI RMF">
+<img src="https://img.shields.io/badge/ISO%2FIEC%2042001-444?style=for-the-badge" alt="ISO/IEC 42001">
+<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-444?style=for-the-badge" alt="OWASP LLM Top 10">
+<img src="https://img.shields.io/badge/MITRE%20ATLAS-444?style=for-the-badge" alt="MITRE ATLAS">
+</p>
 
 ## Documentation
 
