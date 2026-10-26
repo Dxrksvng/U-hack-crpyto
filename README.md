@@ -6,7 +6,7 @@
 
 **Check before you send.** BridgeSecur is a warn-only Web3 transfer safety checker. Before a user sends crypto, it checks the destination address, shows a plain-language verdict with evidence, and lets the user decide. It also ships as a MetaMask Snap that shows the same verdict inside MetaMask's native Send confirmation.
 
-Built for U-Hackathon 2026.
+Built for U-Hackathon 2026. Live demo (DEMO risk data, WalletConnect not configured): <https://bridgesecur.vercel.app>
 
 > **Status: UI-first MVP.** All risk data is deterministic **DEMO fixtures**, labelled DEMO everywhere. There is no live sanctions, fraud, or on-chain analysis yet. The product is not a security guarantee and never calls an address "safe" (the best verdict is `NO_KNOWN_RISK`).
 
