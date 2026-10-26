@@ -323,12 +323,11 @@ Builder: Nattakamon Jaimetha. Source: [portfolio](https://nattakamon-portfolio.v
 
 | Year | Event | Result |
 |---|---|---|
+| 2026 | U-Hackathon 2026 | BridgeSecur, a warn-only Web3 transfer safety checker with a MetaMask Snap (this repository). Participant; no result announced. |
 | 2026 | SKY Innovation Spark 2026 (SKY ICT hackathon) | One TrustX, an airport decision-support MVP. Selected among 15 teams; advanced to the round of 5 finalists. Final awards not yet decided. |
 | 2026 | Super AI Engineer Season 6 (AIEAT Thailand) | FahMai, a Thai-language retrieval project. Benchmark: 95/100 questions across a 118-document knowledge base. |
 | 2025 | Super AI Engineer Season 5 (AIEAT Thailand) | Honorable Mention, Healthcare AI project (เฒ่าทัน). |
 | 2019 | National Arts & Crafts Competition | Gold Medal, motion infographic "Preserving Thai Seas". |
-
-BridgeSecur was built for U-Hackathon 2026. No U-Hackathon result is listed here because none has been announced in the source above.
 
 ## Documentation
 
