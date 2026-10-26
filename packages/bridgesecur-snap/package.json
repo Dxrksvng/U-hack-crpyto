@@ -1,6 +1,6 @@
 {
   "name": "bridgesecur-snap",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "private": true,
   "description": "BridgeSecur transaction insight for MetaMask (UI-first MVP, mock risk data)",
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "mm-snap build",
     "start": "mm-snap watch",
     "serve": "mm-snap serve",
-    "test": "vitest run && mm-snap build",
+    "test": "vitest run && mm-snap build && node test/bundle-smoke.mjs",
     "test:unit": "vitest run",
     "typecheck": "tsc --noEmit"
   },
