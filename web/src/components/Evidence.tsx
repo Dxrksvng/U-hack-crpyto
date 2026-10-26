@@ -42,7 +42,7 @@ export function EvidenceItem({ e, variant = "compact", index = 0 }: { e: Evidenc
   );
   if (variant === "card")
     return (
-      <motion.li initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-3 rounded-2xl border border-border bg-surface p-4" data-testid="evidence-item">
+      <motion.li initial={{ y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-3 rounded-2xl border border-border bg-surface p-4" data-testid="evidence-item">
         <span className={cn("grid h-10 w-10 shrink-0 place-items-center rounded-xl", e.severity === "high" ? "bg-critical-soft text-critical-ink" : e.severity === "medium" ? "bg-warning-soft text-warning-ink" : "bg-muted text-fg-muted")}>
           <Icon size={18} />
         </span>
@@ -50,7 +50,7 @@ export function EvidenceItem({ e, variant = "compact", index = 0 }: { e: Evidenc
       </motion.li>
     );
   return (
-    <motion.li initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-2.5" data-testid="evidence-item">
+    <motion.li initial={{ y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-2.5" data-testid="evidence-item">
       <span className={cn("mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full", SEV[e.severity])} aria-hidden />
       <div className="min-w-0 flex-1 text-[13px] leading-snug">{body}</div>
     </motion.li>
@@ -74,7 +74,7 @@ export function RiskFactorRow({ e, index = 0 }: { e: Evidence; index?: number })
   const Icon = e.reporter_count != null ? Users : TIER_ICON[e.tier];
   const k = sevKey(e);
   return (
-    <motion.li initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-3 py-3.5" data-testid="evidence-item">
+    <motion.li initial={{ y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: DUR.standard, delay: index * 0.05 }} className="flex gap-3 py-3.5" data-testid="evidence-item">
       <Icon size={18} className={cn("mt-0.5 shrink-0", k === "critical" || k === "high" ? "text-critical" : k === "medium" ? "text-warning" : "text-fg-muted")} aria-hidden />
       <div className="min-w-0 flex-1 text-[13px] leading-snug">
         <div className="flex items-start justify-between gap-2">

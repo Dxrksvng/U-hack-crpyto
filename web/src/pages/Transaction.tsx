@@ -27,12 +27,13 @@ export default function Transaction() {
       </>
     );
   const inFlight = IN_FLIGHT.includes(active.status);
+  const check = active.checkId ? s.getCheck(active.checkId) : undefined;
   return (
     <>
       <TopBar title={active.status === "confirmed" ? t("success.title") : t("tx.title")} left="menu" />
       <div className="mx-auto w-full max-w-[480px] space-y-4 px-4 py-5">
         {active.status === "confirmed" ? (
-          <TransactionSuccess tx={active} />
+          <TransactionSuccess tx={active} checkMode={check ? check.demo ? "DEMO" : "LIVE" : undefined} />
         ) : (
           <>
             {active.status === "awaiting_approval" && (

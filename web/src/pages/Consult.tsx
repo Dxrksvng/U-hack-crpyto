@@ -7,11 +7,11 @@ import { DemoBadge } from "@/components/States";
 import { Sparkles } from "lucide-react";
 import { getChain } from "@/lib/chains";
 
-/** Screen 10: BridgeConsult assistant. Uses the most recent check in this session as context, if any. */
+/** Screen 10: BridgeConsult assistant. Uses the selected check, falling back to the latest session check. */
 export default function Consult() {
   const { t } = useTranslation();
-  const { checks } = useSession();
-  const rec = checks[0] ?? null;
+  const { current, checks } = useSession();
+  const rec = current ?? checks[0] ?? null;
   const nkr = rec?.result.verdict === "NO_KNOWN_RISK";
   return (
     <div className="mx-auto w-full max-w-[480px] px-4 py-5">

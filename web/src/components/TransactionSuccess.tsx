@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { DemoBadge } from "./States";
 
 /** Rendered only for a record whose on-chain receipt reported success. Never from approval or a bare hash. */
-export function TransactionSuccess({ tx }: { tx: SendRecord }) {
+export function TransactionSuccess({ tx, checkMode }: { tx: SendRecord; checkMode?: "DEMO" | "LIVE" }) {
   const { t, i18n } = useTranslation();
   const reduce = useReducedMotion();
   const chain = getChain(tx.chainId);
@@ -69,7 +69,7 @@ export function TransactionSuccess({ tx }: { tx: SendRecord }) {
           </dd>
         </div>
       </dl>
-      {tx.verdict && <p className="text-center text-xs text-fg-muted">{t(`verdict.${tx.verdict}.label`)} {tx.checkId ? <DemoBadge className="ml-1" /> : null}</p>}
+      {tx.verdict && <p className="text-center text-xs text-fg-muted">{t(`verdict.${tx.verdict}.label`)} {checkMode === "DEMO" ? <DemoBadge className="ml-1" /> : checkMode === "LIVE" ? <span className="ml-1 font-mono">{t("common.live")}</span> : null}</p>}
       <div className="grid gap-2">
         <Button asChild size="lg" data-testid="success-history">
           <Link to="/history">{t("success.history")}</Link>

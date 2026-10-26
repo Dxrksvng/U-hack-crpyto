@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { Dialog as D } from "radix-ui";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
@@ -19,25 +19,32 @@ type Props = {
 /** iOS-style bottom sheet: rounded top, drag handle, swipe down / Esc / backdrop to close. Radix restores focus on close. */
 export function Sheet({ open, onOpenChange, title, hideTitle, closeLabel, children, className, testId }: Props) {
   const reduce = useReducedMotion();
-  // Opened programmatically (no Radix Trigger), so remember and restore the invoking element ourselves.
   const returnTo = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    if (open) returnTo.current = document.activeElement as HTMLElement | null;
-    else if (returnTo.current) {
-      const el = returnTo.current;
-      returnTo.current = null;
-      requestAnimationFrame(() => el.isConnected && el.focus());
-    }
-  }, [open]);
   return (
     <D.Root open={open} onOpenChange={onOpenChange}>
       <AnimatePresence>
         {open && (
           <D.Portal forceMount>
             <D.Overlay asChild forceMount>
-              <motion.div className="fixed inset-0 z-50 bg-[#0F1729]/45" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: DUR.standard }} />
+              <motion.div className="fixed inset-0 z-50 bg-[#0F1729]/45" onClick={() => onOpenChange(false)} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: DUR.standard }} />
             </D.Overlay>
-            <D.Content asChild forceMount aria-describedby={undefined} onCloseAutoFocus={(e) => e.preventDefault()}>
+            <D.Content
+              asChild forceMount aria-describedby={undefined}
+              onOpenAutoFocus={() => {
+                returnTo.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+              }}
+              onCloseAutoFocus={(event) => {
+                event.preventDefault();
+                if (returnTo.current?.isConnected) returnTo.current.focus();
+                returnTo.current = null;
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Escape") {
+                  event.preventDefault();
+                  onOpenChange(false);
+                }
+              }}
+            >
               <motion.div
                 data-testid={testId}
                 className={cn(

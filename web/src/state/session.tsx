@@ -26,6 +26,7 @@ type Session = {
 
   checks: CheckRecord[];
   getCheck: (id: string) => CheckRecord | undefined;
+  selectCheck: (id: string) => void;
   sends: SendRecord[];
   addSend: (r: SendRecord) => void;
   updateSend: (id: string, patch: Partial<SendRecord>) => void;
@@ -123,6 +124,16 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       cancelCheck,
       checks,
       getCheck,
+      selectCheck: (id) => {
+        const record = checks.find((check) => check.id === id);
+        if (!record) return;
+        cancelCheck();
+        setChainIdRaw(record.chainId);
+        setDestinationRaw(record.destination);
+        setLatestId(record.id);
+        setError(null);
+        setStatus("done");
+      },
       sends,
       addSend: (r) => setSends((xs) => [r, ...xs]),
       updateSend: (id, patch) => setSends((xs) => xs.map((x) => (x.id === id ? { ...x, ...patch } : x))),

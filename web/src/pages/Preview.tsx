@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AlertTriangle, Info } from "lucide-react";
 import { toast } from "sonner";
@@ -38,6 +38,18 @@ export default function Preview() {
   const [alertFor, setAlertFor] = useState<CheckRecord | null>(null);
   const [revalidating, setRevalidating] = useState(false);
 
+  const latest = useRef({ address, isConnected, walletChain, chainId: s.chainId, destination: s.destination, amount: s.amount, block });
+  latest.current = { address, isConnected, walletChain, chainId: s.chainId, destination: s.destination, amount: s.amount, block };
+  const contextKey = `${address}:${isConnected}:${walletChain}:${s.chainId}:${s.destination}:${s.amount}`;
+  const contextRevision = useRef({ key: contextKey, version: 0 });
+  if (contextRevision.current.key !== contextKey) contextRevision.current = { key: contextKey, version: contextRevision.current.version + 1 };
+  const mounted = useRef(true);
+  const checking = useRef(false);
+  useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; };
+  }, []);
+
   const rec = s.current;
   if (!dest || !valueWei || !chain.live || !rec)
     return (
@@ -52,12 +64,14 @@ export default function Preview() {
   const wrongNet = isConnected && walletChain !== s.chainId;
 
   const start = (from: `0x${string}`, to: `0x${string}`, value: bigint, c: CheckRecord) => {
+    const now = latest.current;
+    if (!mounted.current || !now.isConnected || now.address !== from || now.walletChain !== c.chainId || now.chainId !== c.chainId || now.destination.trim().toLowerCase() !== to.toLowerCase() || now.amount !== s.amount || now.block || c.destination.toLowerCase() !== to.toLowerCase()) return;
     const id = transfer.send({ chainId: s.chainId, from, to, amount: s.amount, value, checkId: c.id, verdict: c.result.verdict });
     if (id) nav(`/transaction/${id}`);
   };
 
   const go = async () => {
-    if (transfer.inFlight || revalidating) return;
+    if (transfer.inFlight || checking.current) return;
     if (!isConnected || !address) return setWalletOpen(true);
     if (wrongNet) return switchChain({ chainId: s.chainId }, { onError: () => toast.error(t("wallet.switchFailed")) });
     if (block) return toast.error(t(`sendBlock.${block}`));
@@ -65,10 +79,18 @@ export default function Preview() {
     let check: CheckRecord | null = rec;
     if (Date.now() - rec.createdAt > STALE_MS) {
       toast(t("preview.stale"));
+      const before = latest.current;
+      const version = contextRevision.current.version;
+      checking.current = true;
       setRevalidating(true);
-      check = await s.runCheck(s.chainId, dest);
-      setRevalidating(false);
-      if (!check) return;
+      try {
+        check = await s.runCheck(s.chainId, dest);
+      } finally {
+        checking.current = false;
+        if (mounted.current) setRevalidating(false);
+      }
+      const now = latest.current;
+      if (!mounted.current || contextRevision.current.version !== version || !check || now.address !== before.address || !now.isConnected || now.walletChain !== before.walletChain || now.chainId !== before.chainId || now.destination !== before.destination || now.amount !== before.amount || now.block) return;
     }
     if (isRisky(check.result.verdict) && !s.acknowledged.has(check.id)) return setAlertFor(check);
     start(address, dest, valueWei, check);

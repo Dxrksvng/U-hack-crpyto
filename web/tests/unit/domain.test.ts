@@ -56,7 +56,9 @@ describe("demo fixtures", () => {
   it("never contains the word safe as a verdict summary claim", async () => {
     for (const end of ["dead", "beef", "0000", "abcd"]) {
       const r = await demoCheck(43113, A(end));
-      expect(r.summary_en.toLowerCase()).not.toMatch(/\bis safe\b/);
+      const claim = r.summary_en.toLowerCase().replaceAll("does not guarantee the destination is safe", "");
+      expect(claim).not.toMatch(/\bis safe\b/);
+      if (r.verdict === "NO_KNOWN_RISK") expect(r.summary_en).toContain("does not guarantee");
     }
   }, 8000);
   it("supports cancellation", async () => {

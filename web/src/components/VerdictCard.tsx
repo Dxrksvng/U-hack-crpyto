@@ -34,7 +34,7 @@ export function VerdictBanner({ rec, className }: { rec: CheckRecord; className?
       key={rec.id}
       data-testid="verdict-banner"
       data-verdict={r.verdict}
-      initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
+      initial={reduce ? false : { scale: 0.98 }}
       animate={
         r.verdict === "CRITICAL" && !reduce
           ? { opacity: 1, scale: 1, boxShadow: ["0 0 0 0 rgba(217,59,59,0)", "0 0 0 5px rgba(217,59,59,0.22)", "0 0 0 0 rgba(217,59,59,0)"] }
@@ -86,7 +86,7 @@ export function VerdictCard({ rec }: { rec: CheckRecord }) {
     <div aria-live="polite" className="space-y-2" data-testid="verdict-card">
       <VerdictBanner rec={rec} />
       <motion.article
-        initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
+        initial={reduce ? false : { y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: DUR.standard, delay: 0.08 }}
         className="overflow-hidden rounded-xl border border-border bg-surface shadow-[0_4px_20px_-10px_rgba(15,23,41,0.2)]"

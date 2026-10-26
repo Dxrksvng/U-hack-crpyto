@@ -81,6 +81,7 @@ export function TransactionHistory() {
                     </span>
                     <span className="block text-xs text-fg-muted">
                       {i.kind === "check" ? t("history.check") : t("history.transfer")} · {chain.short} · {when(i.at)}
+                      {i.kind === "check" && <span className="ml-2">{i.rec.demo ? <span className="font-mono text-warning-ink">{t("common.demo")}</span> : <span className="font-mono">{t("common.live")}</span>}</span>}
                     </span>
                   </span>
                   <span className="text-right text-xs">

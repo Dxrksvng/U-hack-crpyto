@@ -47,7 +47,7 @@ async function readyToSend(page: Page, sc: WalletScenario = {}, amount = "0.01")
 async function sendFromPreview(page: Page) {
   await expect(page.getByTestId("send-tx")).toBeEnabled({ timeout: 8000 });
   await page.getByTestId("send-tx").click();
-  await expect(page).toHaveURL(/\/preview$/);
+  await expect(page).toHaveURL(/\/review$/);
   await expect(page.getByTestId("continue-wallet")).toBeEnabled({ timeout: 8000 });
   await page.getByTestId("continue-wallet").click();
 }
@@ -90,10 +90,10 @@ test.describe("transaction lifecycle (mocked wallet + RPC, no real funds)", () =
   test("success: hash, explorer link, confirmed only after receipt", async ({ page }) => {
     await readyToSend(page);
     await sendFromPreview(page);
-    const st = page.getByTestId("tx-status");
-    await expect(st).toHaveAttribute("data-status", "confirmed", { timeout: 15_000 });
-    await expect(page.getByTestId("tx-step-confirmed")).toHaveAttribute("data-state", "done");
-    await expect(page.getByTestId("tx-explorer")).toHaveAttribute("href", `https://explorer-test.avax.network/c-chain/tx/${MOCK_HASH}`);
+    const success = page.getByTestId("tx-success");
+    await expect(success).toBeVisible({ timeout: 15_000 });
+    await expect(success).toContainText("Confirmed on-chain");
+    await expect(success.getByRole("link", { name: "View on explorer" })).toHaveAttribute("href", `https://explorer-test.avax.network/c-chain/tx/${MOCK_HASH}`);
   });
 
   test("wallet rejection shows Transaction rejected at the approval step, with retry", async ({ page }) => {
@@ -143,7 +143,7 @@ test.describe("transaction lifecycle (mocked wallet + RPC, no real funds)", () =
     await expect(page.getByTestId("send-tx")).toBeEnabled({ timeout: 8000 });
     await page.getByTestId("send-tx").click();
     await page.getByTestId("continue-wallet").dblclick();
-    await expect(page.getByTestId("tx-status")).toHaveAttribute("data-status", "confirmed", { timeout: 15_000 });
+    await expect(page.getByTestId("tx-success")).toBeVisible({ timeout: 15_000 });
     expect(await page.evaluate(() => (window as unknown as { __sendCount: number }).__sendCount)).toBe(1);
   });
 });

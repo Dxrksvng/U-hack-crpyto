@@ -21,7 +21,8 @@ export default function RiskDetails() {
   const { t, i18n } = useTranslation();
   const { checkId = "" } = useParams();
   const nav = useNavigate();
-  const rec = useSession().getCheck(checkId);
+  const session = useSession();
+  const rec = session.getCheck(checkId);
   if (!rec)
     return (
       <>
@@ -72,8 +73,8 @@ export default function RiskDetails() {
           <p className="text-sm">{th ? r.recommendation_th : r.recommendation_en}</p>
           {r.verdict === "NO_KNOWN_RISK" && (
             <div className="mt-3 grid gap-2">
-              <Button onClick={() => nav("/review")} data-testid="details-review">{t("nkr.review")}</Button>
-              <Button variant="outline" asChild data-testid="details-consult"><Link to="/consult">{t("nkr.askConsult")}</Link></Button>
+              <Button onClick={() => { session.selectCheck(rec.id); nav("/review"); }} data-testid="details-review">{t("nkr.review")}</Button>
+              <Button variant="outline" asChild data-testid="details-consult"><Link to="/consult" onClick={() => session.selectCheck(rec.id)}>{t("nkr.askConsult")}</Link></Button>
               <Button variant="ghost" asChild data-testid="details-back"><Link to="/send">{t("nkr.back")}</Link></Button>
             </div>
           )}

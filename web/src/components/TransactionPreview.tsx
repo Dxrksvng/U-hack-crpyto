@@ -73,7 +73,7 @@ export function TransactionPreview({ from, to, chain, amount, amountWei, fee, fe
           <span className={cn("inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium", st.soft, st.text)} data-testid="preview-verdict">
             <st.icon size={13} aria-hidden /> {t(`verdict.${rec.result.verdict}.label`)}
           </span>
-          {rec.demo && <DemoBadge />}
+          {rec.demo ? <DemoBadge /> : <span className="rounded border border-border px-1.5 py-px font-mono text-[10px] font-bold">{t("common.live")}</span>}
           <Link to={`/analysis/${rec.id}/details`} className="inline-flex min-h-11 items-center gap-1 text-xs font-medium text-primary-ink">
             {t("preview.evidence")} <ArrowRight size={12} />
           </Link>

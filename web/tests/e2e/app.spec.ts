@@ -7,6 +7,7 @@ test.describe("navigation & preferences", () => {
     const btn = page.getByTestId("menu-button");
     await btn.click();
     await expect(page.getByTestId("menu-sheet")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Close menu" })).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(page.getByTestId("menu-sheet")).toBeHidden();
     await expect(btn).toBeFocused();
@@ -14,6 +15,7 @@ test.describe("navigation & preferences", () => {
     await page.getByRole("button", { name: "Close menu" }).click();
     await expect(page.getByTestId("menu-sheet")).toBeHidden();
     await btn.click();
+    await expect(page.getByRole("button", { name: "Close menu" })).toBeFocused();
     await page.mouse.click(200, 40);
     await expect(page.getByTestId("menu-sheet")).toBeHidden();
   });
@@ -63,6 +65,7 @@ test.describe("navigation & preferences", () => {
     await page.getByTestId("menu-button").focus();
     await page.keyboard.press("Enter");
     await expect(page.getByTestId("menu-sheet")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Close menu" })).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(page.getByTestId("menu-button")).toBeFocused();
   });

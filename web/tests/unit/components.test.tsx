@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { VerdictCard } from "@/components/VerdictCard";
 import { PreSendAlertSheet } from "@/components/PreSendAlertSheet";
+import { TransactionSuccess } from "@/components/TransactionSuccess";
 import { deriveSteps } from "@/components/AddressChecking";
 import { demoCheck } from "@/fixtures/demo";
 import type { CheckRecord } from "@/domain/types";
@@ -17,15 +18,15 @@ async function rec(end: string): Promise<CheckRecord> {
 const wrap = (ui: React.ReactNode) => render(<MemoryRouter><TooltipProvider>{ui}</TooltipProvider></MemoryRouter>);
 
 describe("VerdictCard", () => {
-  it.each(["dead", "beef", "0000", "abcd"])("renders fixture %s without a 'safe' verdict or a green tick", async (end) => {
+  it.each(["dead", "beef", "0000", "abcd"])("renders fixture %s without a safety claim or success tick in the verdict", async (end) => {
     await i18n.changeLanguage("en");
     const r = await rec(end);
     const { container } = wrap(<VerdictCard rec={r} />);
     expect(screen.getByTestId("verdict-banner")).toHaveAttribute("data-verdict", r.result.verdict);
-    expect(screen.getByText("DEMO")).toBeInTheDocument();
-    const text = (container.textContent ?? "").toLowerCase().replaceAll("does not mean it is safe", "");
+    expect(screen.getAllByText("DEMO").length).toBeGreaterThan(0);
+    const text = (container.textContent ?? "").toLowerCase().replaceAll("does not mean it is safe", "").replaceAll("does not guarantee the destination is safe", "");
     expect(text).not.toMatch(/\b(is safe|safe address)\b/);
-    expect(container.querySelector(".lucide-check, .lucide-circle-check")).toBeNull();
+    expect(screen.getByTestId("verdict-banner").querySelector(".lucide-check, .lucide-circle-check")).toBeNull();
     expect(screen.getByTestId("tier-strip").children).toHaveLength(5);
   }, 5000);
   it("renders evidence source links that open in a new tab", async () => {
@@ -74,5 +75,15 @@ describe("checking pipeline", () => {
   it("maps timeouts from the result instead of ticking them", async () => {
     const r = await rec("0000");
     expect(deriveSteps("done", r, null).onchain).toBe("timeout");
+  });
+});
+
+describe("transaction check origin", () => {
+  it.each(["DEMO", "LIVE"] as const)("shows %s from the associated check rather than the presence of a check ID", async (checkMode) => {
+    await i18n.changeLanguage("en");
+    const address: `0x${string}` = "0x333333333333333333333333333333333333abcd";
+    wrap(<TransactionSuccess tx={{ id: "tx", chainId: 43113, from: address, to: address, amount: "0.01", status: "confirmed", checkId: "check", verdict: "NO_KNOWN_RISK", createdAt: Date.now() }} checkMode={checkMode} />);
+    expect(screen.getByText(checkMode)).toBeInTheDocument();
+    expect(screen.queryByText(checkMode === "LIVE" ? "DEMO" : "LIVE")).toBeNull();
   });
 });
